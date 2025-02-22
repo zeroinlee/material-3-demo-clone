@@ -4,7 +4,7 @@ import 'package:material_3_demo_clone/config/adaptive/app_destination.dart';
 import 'package:material_3_demo_clone/config/adaptive/app_breakpoint.dart';
 
 class AdaptiveScaffold extends StatelessWidget {
-  AdaptiveScaffold({
+  const AdaptiveScaffold({
     super.key,
     this.appBar,
     this.navigationBar,
@@ -15,7 +15,6 @@ class AdaptiveScaffold extends StatelessWidget {
     required this.trailingExtended,
     required this.currendIndex,
     required this.onTap,
-    required this.destinations,
   });
 
   final Widget? appBar;
@@ -29,18 +28,6 @@ class AdaptiveScaffold extends StatelessWidget {
 
   final int currendIndex;
   final Function(int index) onTap;
-  final List<BottomNavigationBarItem> destinations;
-
-  late final List<NavigationRailDestination> items =
-      destinations
-          .map(
-            (e) => NavigationRailDestination(
-              icon: e.icon,
-              selectedIcon: e.activeIcon,
-              label: Text(e.label ?? '', maxLines: 1),
-            ),
-          )
-          .toList();
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +73,7 @@ class AdaptiveScaffold extends StatelessWidget {
                   extended: false,
                   selectedIndex: currendIndex,
                   onDestinationSelected: onTap,
-                  destinations: items,
+                  destinations: AppDestination.destinations,
                   trailing: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: trailing,
@@ -104,7 +91,7 @@ class AdaptiveScaffold extends StatelessWidget {
                   extended: true,
                   selectedIndex: currendIndex,
                   onDestinationSelected: onTap,
-                  destinations: items,
+                  destinations: AppDestination.destinations,
                   trailing: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: trailingExtended,
@@ -140,7 +127,7 @@ class AdaptiveScaffold extends StatelessWidget {
               return _AdaptiveBottomNavigationBar(
                 currendIndex: currendIndex,
                 onTap: onTap,
-                items: destinations,
+                items: AppDestination.items,
               );
             },
           ),

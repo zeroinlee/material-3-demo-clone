@@ -26,48 +26,6 @@ class Home extends StatelessWidget {
       body: navigationShell,
       currendIndex: navigationShell.currentIndex,
       onTap: (index) => navigationShell.goBranch(index),
-      destinations: [
-        BottomNavigationBarItem(
-          icon: Container(color: Colors.red, width: 50, height: 50),
-          label: 'Components',
-        ),
-        BottomNavigationBarItem(
-          icon: Container(color: Colors.orange, width: 50, height: 50),
-          label: 'Color',
-        ),
-        BottomNavigationBarItem(
-          icon: Container(color: Colors.yellow, width: 50, height: 50),
-          label: 'Typography',
-        ),
-        BottomNavigationBarItem(
-          icon: Container(color: Colors.green, width: 50, height: 50),
-          label: 'Elevation',
-        ),
-        // const BottomNavigationBarItem(
-        //   tooltip: '',
-        //   icon: Icon(Icons.widgets_outlined),
-        //   label: 'Components',
-        //   activeIcon: Icon(Icons.widgets),
-        // ),
-        // const BottomNavigationBarItem(
-        //   tooltip: '',
-        //   icon: Icon(Icons.format_paint_outlined),
-        //   label: 'Color',
-        //   activeIcon: Icon(Icons.format_paint),
-        // ),
-        // const BottomNavigationBarItem(
-        //   tooltip: '',
-        //   icon: Icon(Icons.text_snippet_outlined),
-        //   label: 'Typography',
-        //   activeIcon: Icon(Icons.text_snippet),
-        // ),
-        // const BottomNavigationBarItem(
-        //   tooltip: '',
-        //   icon: Icon(Icons.invert_colors_on_outlined),
-        //   label: 'Elevation',
-        //   activeIcon: Icon(Icons.opacity),
-        // ),
-      ],
     );
   }
 }
